@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luz Velita</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="image/luzvelitaIcono2.jpeg" alt="Icono Luz Velita" class="brand-logo" />
+      <div>
+        <h1>Luz Velita</h1>
+        <p>Imaginando y Creando velitas y souvenir para armonizar tus espacios</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#carrito">Carrito</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <h2>Bienvenido a tienda virtual Luz Velita</h2>
+        <p>Sube productos, revisa el carrusel y compra en una sola página.</p>
+      </div>
+      <video 
+        class="hero-video" 
+        controls
+        autoplay
+        muted
+        loop>
+        <source src="image/videoVaso.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
+      <button id="verProductosBtn" class="btn hero-btn">Ver Productos</button>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="section-header">
+        <h2>Productos</h2>
+        <p>Agrega nuevos productos para que estén disponibles en el carrito y el carrusel.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card card-form">
+          <h3>Agregar producto</h3>
+          <form id="productForm">
+            <label>
+              Nombre
+              <input type="text" id="productName" placeholder="Ej. Cuaderno" required />
+            </label>
+            <label>
+              Precio
+              <input type="number" id="productPrice" placeholder="Ej. 12.50" step="0.1" min="0" required />
+            </label>
+            <label>
+              URL imagen
+              <input type="url" id="productImage" placeholder="https://..." required />
+            </label>
+            <label>
+              Descripción
+              <textarea id="productDescription" rows="3" placeholder="Descripción breve" required></textarea>
+            </label>
+            <button type="submit" class="btn">Agregar al catálogo</button>
+          </form>
+        </article>
+
+        <article class="card card-carousel">
+          <h3>Productos destacados</h3>
+          <div class="carousel">
+            <button id="prevBtn" class="carousel-control">◀</button>
+            <div class="carousel-track" id="carouselTrack"></div>
+            <button id="nextBtn" class="carousel-control">▶</button>
+          </div>
+        </article>
+      </div>
+
+      <div id="productList" class="product-grid"></div>
+    </section>
+
+    <section class="section" id="carrito">
+      <div class="section-header">
+        <h2>Carrito de Compras</h2>
+        <p>Revise sus artículos y totalice su compra.</p>
+      </div>
+      <div class="card cart-card">
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+          <p>Total: <span id="cartTotal">$0.00</span></p>
+          <button id="clearCartBtn" class="btn btn-secondary">Vaciar carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="section-header">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas? Nos encantaría saber de ti. Completa el formulario a continuación.</p>
+      </div>
+      <div class="card contact-card">
+        <form id="contactForm">
+          <label>
+            Nombre
+            <input type="text" id="contactName" placeholder="Tu nombre completo" required />
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" id="contactEmail" placeholder="tu@email.com" required />
+          </label>
+          <label>
+            Teléfono (opcional)
+            <input type="tel" id="contactPhone" placeholder="+1 (555) 000-0000" />
+          </label>
+          <label>
+            Asunto
+            <input type="text" id="contactSubject" placeholder="Ej. Consulta sobre productos" required />
+          </label>
+          <label>
+            Mensaje
+            <textarea id="contactMessage" rows="5" placeholder="Cuéntanos tu mensaje..." required></textarea>
+          </label>
+          <button type="submit" class="btn">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Proyecto estudiantil Talento Tech- HTML, CSS y JavaScript - Marcelo Gonzalez</p>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Subir al inicio">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

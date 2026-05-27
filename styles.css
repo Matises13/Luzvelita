@@ -1,0 +1,514 @@
+:root {
+  --bg: #f4f7fb;
+  --bg-card: #ffffff;
+  --primary: #c408d5;
+  --primary-dark: #aa0abc;
+  --accent: #ed8936;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #fde1ed;
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #ff9ecf 0%, #f16aa4 100%);
+  color: white;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 10px 40px rgba(241, 106, 164, 0.25);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-logo {
+  width: 86px;
+  height: 86px;
+  padding: 10px;
+  border-radius: 24px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.brand p {
+  margin: 0.25rem 0 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: #fbbf24;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.6rem;
+  text-align: center;
+}
+
+.hero-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  border: 2px solid var(--border);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  background-color: #000;
+  display: block;
+  object-fit: cover;
+  margin: 1.5rem 0;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+}
+
+.btn {
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: #94a3b8;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(196, 8, 213, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.section {
+  padding: 2rem 1.6rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.section-header p {
+  margin: 0.5rem 0 1.2rem;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  padding: 1.5rem;
+}
+
+.card-form label,
+.card-form textarea,
+.card-form input {
+  width: 100%;
+  display: block;
+}
+
+.card-form label {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-form input,
+.card-form textarea {
+  margin-top: 0.4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+.card-form textarea {
+  resize: vertical;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-track {
+  min-height: 260px;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  background: #f8fafc;
+}
+
+.carousel-card {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.carousel-card img {
+  max-height: 160px;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.carousel-card h4 {
+  margin: 0;
+}
+
+.carousel-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.carousel-control {
+  border: none;
+  background: var(--primary);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.product-card .card-body {
+  padding: 1rem;
+}
+
+.product-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.product-card p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.price {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cart-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.cart-items {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #f8fafc;
+}
+
+.cart-item div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.cart-item button {
+  height: 38px;
+  align-self: center;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer {
+  padding: 1.5rem 1.6rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-card form label,
+.contact-card form input,
+.contact-card form textarea {
+  width: 100%;
+  display: block;
+}
+
+.contact-card form label {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.contact-card form input,
+.contact-card form textarea {
+  margin-top: 0.4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact-card form textarea {
+  resize: vertical;
+}
+
+.contact-card form input:focus,
+.contact-card form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(196, 8, 213, 0.1);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero-video {
+    max-width: 100%;
+    max-height: 360px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .carousel {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .carousel-track {
+    min-height: 320px;
+  }
+
+  .carousel-control {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: right;
+  }
+
+  .btn,
+  .card-form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .carousel-track {
+    min-height: 280px;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+
+  .cart-item {
+    padding: 0.85rem;
+  }
+
+  .cart-summary {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+  }
+
+  .contact-card form button {
+    width: 100%;
+  }
+}
